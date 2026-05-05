@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Movie Details - CineKiran</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">CINE<span>KIRAN</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Now Showing</a></li>
+      <li><a href="index.html#coming-soon">Coming Soon</a></li>
+      <li><a href="index.html#offers">Offers</a></li>
+    </ul>
+    <div class="nav-right">
+      <input type="text" class="search-box" placeholder="Search movies, cinemas..."/>
+      <button class="btn-sign">Sign In</button>
+    </div>
+  </div>
+</nav>
+
+<div id="movieDetailRoot"></div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="logo">CINE<span>KIRAN</span></a>
+      <p>Your ultimate destination for movie ticket bookings.</p>
+    </div>
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+      </ul>
+    </div>
+    <div class="footer-links">
+      <h4>Support</h4>
+      <ul>
+        <li><a href="#">Help Center</a></li>
+        <li><a href="#">Cancellation Policy</a></li>
+        <li><a href="#">Feedback</a></li>
+      </ul>
+    </div>
+    <div class="footer-contact">
+      <h4>Contact Us</h4>
+      <p>support@cinekiran.in</p>
+      <p>+91 98765 43210</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 CineKiran. All rights reserved. Designed and developed by <strong>Kiran</strong>.</p>
+  </div>
+</footer>
+
+<script src="movies.js"></script>
+<script src="app.js"></script>
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const id = parseInt(params.get('id'));
+  const movie = movies.find(m => m.id === id);
+  if (movie) renderMovieDetail('movieDetailRoot', movie);
+  else document.getElementById('movieDetailRoot').innerHTML = '<div class="container" style="padding:100px 20px;text-align:center;color:#ccc"><h2>Movie not found</h2><a href="index.html" class="btn-primary" style="margin-top:20px;display:inline-block">Go Home</a></div>';
+</script>
+</body>
+</html>

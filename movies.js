@@ -1,0 +1,262 @@
+const movies = [
+  {
+    id: 1,
+    title: "The Last Horizon",
+    status: "now",
+    genre: ["Sci-Fi", "Drama"],
+    language: "English",
+    duration: "2h 34m",
+    rating: "9.1",
+    certification: "UA",
+    releaseDate: "April 18, 2026",
+    director: "Christopher Nolan",
+    producers: ["Emma Thomas", "Charles Roven"],
+    studio: "Warner Bros. Pictures",
+    poster: "https://images.unsplash.com/photo-1518676590629-3dcbd9c5a5c9?w=400&q=80",
+    backdrop: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=1600&q=80",
+    synopsis: "In the year 2089, as Earth faces ecological collapse, a team of elite astronauts is dispatched on humanity's final mission — to traverse a newly discovered wormhole near Saturn and find a habitable world. What begins as a desperate voyage of survival becomes a profound journey through time, memory, and the edges of human consciousness. Directed with breathtaking visual ambition, The Last Horizon is a meditation on love, sacrifice, and what it means to belong to a dying planet.",
+    story: "The story follows Commander Elara Voss, a brilliant astrophysicist and single mother, who leads a crew of four through the wormhole dubbed 'Horizon Gate'. What they find on the other side defies all known physics — a system of three habitable planets orbiting a dying star, each with remnants of a vanished civilization. As the crew investigates, they begin experiencing temporal distortions that blur the line between past and future. Elara starts receiving transmissions that appear to come from her own voice — decades in the future — warning her of a catastrophic decision she must not make. The film builds to a staggering climax across two timelines as Elara must choose between saving her crew and ensuring humanity's survival.",
+    cast: [
+      { name: "Emily Clarke", role: "Commander Elara Voss", bio: "Award-winning actress known for her intense dramatic range. Won the BAFTA for Best Actress in 2024 for 'The Iron Coast'." },
+      { name: "David Oyelowo", role: "Dr. Marcus Webb", bio: "Celebrated British-Nigerian actor with acclaimed performances in 'Selma' and 'Les Miserables'. Brings gravitas and warmth to the role of the mission scientist." },
+      { name: "Naomi Watts", role: "Dr. Yuna Kim", bio: "Veteran actress with over 30 years of critically lauded work. Her portrayal of the mission's AI specialist is nuanced and emotionally gripping." },
+      { name: "Timothee Chalamet", role: "Pilot Jax Mercer", bio: "A new-generation powerhouse, Chalamet brings youthful vulnerability to the youngest member of the crew, whose backstory reveals the film's emotional core." }
+    ],
+    crew: [
+      { role: "Director", name: "Christopher Nolan" },
+      { role: "Screenplay", name: "Jonathan Nolan, Kip Thorne" },
+      { role: "Cinematography", name: "Hoyte van Hoytema" },
+      { role: "Original Score", name: "Hans Zimmer" },
+      { role: "Production Design", name: "Nathan Crowley" },
+      { role: "Visual Effects", name: "Andrew Jackson" }
+    ],
+    awards: ["Academy Award - Best Visual Effects", "Academy Award - Best Original Score", "BAFTA - Best Film", "Golden Globe - Best Director"],
+    price: { standard: 200, premium: 350, recliner: 550 }
+  },
+  {
+    id: 2,
+    title: "Shadows of the Monsoon",
+    status: "now",
+    genre: ["Thriller", "Mystery"],
+    language: "Hindi",
+    duration: "2h 18m",
+    rating: "8.7",
+    certification: "A",
+    releaseDate: "March 28, 2026",
+    director: "Zoya Akhtar",
+    producers: ["Ritesh Sidhwani", "Farhan Akhtar"],
+    studio: "Excel Entertainment",
+    poster: "https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=400&q=80",
+    backdrop: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&q=80",
+    synopsis: "A monsoon-drenched psychological thriller set in the narrow alleys of old Mumbai. When a veteran detective returns from medical leave, she is handed a cold case that reopens wounds she was not prepared to face. Shadows of the Monsoon is a masterclass in tension, atmosphere, and the ghosts we carry within ourselves.",
+    story: "Detective Meera Ahuja has not worked a case in eight months. The last one broke her. Now, a new superior hands her an unsolved case from 1994 — the murder of a textile merchant whose body was found in the monsoon floods, ruled an accident by the original investigators. Meera begins pulling threads and discovers a web connecting three powerful families, a disappeared witness, and a decades-old secret buried beneath the city's financial district. The deeper she digs, the more she realizes that the murder was only the beginning. And that someone still very much alive is watching every step she takes.",
+    cast: [
+      { name: "Tabu", role: "Detective Meera Ahuja", bio: "One of India's most celebrated actresses, Tabu brings her signature intensity to this complex investigative role. Her command of silence and subtle emotion is at the heart of the film." },
+      { name: "Manoj Bajpayee", role: "Commissioner Vikrant Rao", bio: "A legend of parallel cinema, Bajpayee plays Meera's morally ambiguous superior with magnetic presence. His scenes with Tabu are the film's intellectual and emotional highpoints." },
+      { name: "Konkona Sen Sharma", role: "Priya Malhotra", bio: "National Award winner whose portrayal of the textile merchant's surviving daughter is heartbreaking and fierce in equal measure." },
+      { name: "Nawazuddin Siddiqui", role: "Raju Bhai", bio: "In a departure from his usual roles, Nawazuddin plays a street-level informant with quiet menace and unexpected vulnerability." }
+    ],
+    crew: [
+      { role: "Director", name: "Zoya Akhtar" },
+      { role: "Screenplay", name: "Reema Kagti, Zoya Akhtar" },
+      { role: "Cinematography", name: "Jay Oza" },
+      { role: "Original Score", name: "Ankur Tewari" },
+      { role: "Production Design", name: "Tanveer Khan" },
+      { role: "Editor", name: "Nitin Baid" }
+    ],
+    awards: ["Filmfare Award - Best Film", "National Film Award - Best Direction", "IFFI - Silver Peacock"],
+    price: { standard: 180, premium: 300, recliner: 480 }
+  },
+  {
+    id: 3,
+    title: "Steel & Silence",
+    status: "now",
+    genre: ["Action", "Crime"],
+    language: "Tamil",
+    duration: "2h 52m",
+    rating: "8.5",
+    certification: "UA",
+    releaseDate: "April 2, 2026",
+    director: "Lokesh Kanagaraj",
+    producers: ["S.A. Chandrasekhar", "Xavier Britto"],
+    studio: "7 Screen Studio",
+    poster: "https://images.unsplash.com/photo-1542204165-65bf26472b9b?w=400&q=80",
+    backdrop: "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=1600&q=80",
+    synopsis: "A lone enforcer with a buried past takes on the most powerful criminal syndicate in South Asia. Steel and Silence is a visceral, operatic action epic that redefines the Tamil action film for the global stage.",
+    story: "Arjun, a former special forces operative turned dockyard worker, lives a quiet life in Chennai's port district. When his nephew witnesses a cartel execution, Arjun is forced to confront the same criminal organization he thought he had escaped. As the body count rises, Arjun uncovers a conspiracy that stretches from the docks of Chennai to the boardrooms of Singapore. The film is a relentless two-and-a-half-hour assault of precision action and surprising emotional depth, anchored by a performance of extraordinary physical and psychological commitment.",
+    cast: [
+      { name: "Vijay", role: "Arjun / The Enforcer", bio: "Superstar Vijay delivers what critics call a career-defining performance, combining athletic physicality with the quiet pathos of a man carrying immense guilt and love." },
+      { name: "Fahadh Faasil", role: "Darius Venn", bio: "The acclaimed Malayalam actor's portrayal of the cartel's chief strategist is coldly brilliant, making him one of Tamil cinema's most memorable antagonists." },
+      { name: "Trisha Krishnan", role: "Inspector Kavitha", bio: "A force in her own right, Trisha plays a morally complex police officer whose loyalty is pulled between the law and justice." },
+      { name: "Saif Ali Khan", role: "The Fixer", bio: "In his Tamil debut, Khan plays a freelance operative who works for the highest bidder, with devastating charm and menace." }
+    ],
+    crew: [
+      { role: "Director", name: "Lokesh Kanagaraj" },
+      { role: "Screenplay", name: "Lokesh Kanagaraj, Rathna Kumar" },
+      { role: "Cinematography", name: "Manoj Paramahamsa" },
+      { role: "Original Score", name: "Anirudh Ravichander" },
+      { role: "Action Director", name: "Dhilip Subbarayan" },
+      { role: "Editor", name: "Philomin Raj" }
+    ],
+    awards: ["Vijay Award - Best Film", "Edison Award - Best Action Sequences", "SIIMA - Best Director"],
+    price: { standard: 190, premium: 320, recliner: 500 }
+  },
+  {
+    id: 4,
+    title: "When the Stars Align",
+    status: "now",
+    genre: ["Romance", "Drama"],
+    language: "English, Hindi",
+    duration: "2h 10m",
+    rating: "8.3",
+    certification: "U",
+    releaseDate: "February 14, 2026",
+    director: "Imtiaz Ali",
+    producers: ["Sajid Nadiadwala"],
+    studio: "Nadiadwala Grandson Entertainment",
+    poster: "https://images.unsplash.com/photo-1494972308805-463bc619d34e?w=400&q=80",
+    backdrop: "https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?w=1600&q=80",
+    synopsis: "Two strangers meet across a time difference of forty years through letters found in an old bookstore. A deeply moving romantic drama about longing, timing, and the possibility that some loves transcend time itself.",
+    story: "Riya, a contemporary graphic designer in Mumbai, discovers a bundle of unsent letters inside a 1970s edition of a used book she buys on a whim. The letters were written by a man named Aarav to a woman named Priya — love letters never sent because of a war that separated them. Captivated, Riya begins researching Aarav's story and finds a grandson who shares his grandfather's letters with her. As Riya falls deeper into the story of Aarav and Priya, she begins to find startling parallels with her own complicated relationship. The film weaves past and present in a lyrical, visually poetic narrative about what we leave unsaid and what we search for in others.",
+    cast: [
+      { name: "Deepika Padukone", role: "Riya / Priya (younger)", bio: "One of Bollywood's finest, Deepika plays both timelines' central female figures with grace and emotional specificity that elevates the film beyond typical romance." },
+      { name: "Ranveer Singh", role: "Aarav / Vikram", bio: "Ranveer offers a rare restrained performance here, stripping away his usual flamboyance to reveal a quieter, aching vulnerability." },
+      { name: "Amitabh Bachchan", role: "Aarav (elder)", bio: "The legendary actor brings immense dignity and heartbreak to the elderly Aarav, making the film's final act an overwhelming emotional experience." },
+      { name: "Alia Bhatt", role: "Tara (Riya's best friend)", bio: "In a supporting role that steals nearly every scene she is in, Alia brings wit and warmth that provide the film its lightness." }
+    ],
+    crew: [
+      { role: "Director", name: "Imtiaz Ali" },
+      { role: "Screenplay", name: "Imtiaz Ali, Sajid Ali" },
+      { role: "Cinematography", name: "Ravi Varman" },
+      { role: "Original Score", name: "A.R. Rahman" },
+      { role: "Lyrics", name: "Gulzar" },
+      { role: "Editor", name: "Aarti Bajaj" }
+    ],
+    awards: ["Filmfare - Best Romantic Film", "IIFA - Best Music Direction", "Zee Cine - Best Film"],
+    price: { standard: 175, premium: 290, recliner: 450 }
+  },
+  {
+    id: 5,
+    title: "Vortex Protocol",
+    status: "now",
+    genre: ["Thriller", "Sci-Fi"],
+    language: "English",
+    duration: "2h 5m",
+    rating: "8.0",
+    certification: "UA",
+    releaseDate: "April 25, 2026",
+    director: "Denis Villeneuve",
+    producers: ["Mary Parent", "Cale Boyter"],
+    studio: "Legendary Pictures",
+    poster: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&q=80",
+    backdrop: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=80",
+    synopsis: "When a government cryptographer decodes an algorithm buried inside every major world financial system, she realizes humanity has been running someone else's simulation for thirty years. A sleek, cerebral thriller from the master of intelligent sci-fi.",
+    story: "Dr. Nina Sorel is a cryptographic analyst at a classified government facility. During a routine audit, she discovers a recursive pattern embedded in global financial architecture — an algorithm that predicts human behavior with 99.97% accuracy. As she tries to trace its origin, she is hunted by forces from multiple governments who have known about the algorithm and profited from it for decades. Nina must decide what she will sacrifice to bring the truth to light, in a cat-and-mouse thriller that builds from tense procedural to explosive global conspiracy.",
+    cast: [
+      { name: "Zendaya", role: "Dr. Nina Sorel", bio: "Following her acclaimed dramatic work, Zendaya anchors this film with intellectual ferocity and physical presence that announces her as a full-blown cinematic force." },
+      { name: "Benedict Cumberbatch", role: "Director Harlan Voss", bio: "Cumberbatch plays the shadowy agency director with precisely calibrated menace and intelligence, never fully revealing whether he is villain or reluctant ally." },
+      { name: "Oscar Isaac", role: "Agent Dario Reyes", bio: "Isaac brings charm and dangerous unpredictability to the field operative assigned to Nina, whose motivations remain deliciously unclear until the final act." },
+      { name: "Cate Blanchett", role: "The Architect", bio: "In a pivotal, limited role, Blanchett commands every frame she occupies as the enigmatic figure who designed the algorithm and vanished." }
+    ],
+    crew: [
+      { role: "Director", name: "Denis Villeneuve" },
+      { role: "Screenplay", name: "Eric Heisserer" },
+      { role: "Cinematography", name: "Greig Fraser" },
+      { role: "Original Score", name: "Johann Johannsson" },
+      { role: "Production Design", name: "Patrice Vermette" },
+      { role: "Editor", name: "Joe Walker" }
+    ],
+    awards: ["Saturn Award - Best Science Fiction Film", "Critics Choice - Best Thriller", "BAFTA Nominated - Best Original Screenplay"],
+    price: { standard: 210, premium: 360, recliner: 560 }
+  },
+  {
+    id: 6,
+    title: "The Golden Coast",
+    status: "now",
+    genre: ["Historical", "Drama"],
+    language: "Kannada",
+    duration: "3h 0m",
+    rating: "9.0",
+    certification: "UA",
+    releaseDate: "January 26, 2026",
+    director: "Rishab Shetty",
+    producers: ["Vijay Kiragandur"],
+    studio: "Hombale Films",
+    poster: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80",
+    backdrop: "https://images.unsplash.com/photo-1519677100203-a0e668c92439?w=1600&q=80",
+    synopsis: "The untold story of a coastal Kannada warrior queen who united fractured kingdoms to resist a foreign invasion in the 16th century. A grand historical epic of power, sacrifice, and unbreakable will.",
+    story: "Queen Nandini of the Tulu coast inherits a crumbling kingdom surrounded by rivals after her husband's sudden death. With a foreign trading empire encroaching on the western coast and her own courtiers plotting against her, Nandini must transform herself from a grieving widow into a political and military strategist. Over three hours, the film charts her alliances, betrayals, and the legendary Battle of the Golden Shore that would be remembered for centuries. Epic in scope but intimate in its character study, The Golden Coast is a portrait of leadership forged in fire.",
+    cast: [
+      { name: "Rashmika Mandanna", role: "Queen Nandini", bio: "In the role of her career, Rashmika delivers a towering performance of regal authority and private vulnerability, anchoring a three-hour epic entirely on her shoulders." },
+      { name: "Srinidhi Shetty", role: "General Meghana", bio: "As the queen's fiercely loyal military commander, Srinidhi brings physical command and emotional depth to a character whose loyalty is tested repeatedly." },
+      { name: "Rishab Shetty", role: "King Devayya (ally)", bio: "The director himself plays the morally complex ruler of a neighboring kingdom, navigating honor and political survival with masterful ambiguity." },
+      { name: "Kishore", role: "The Viceroy", bio: "The antagonist of the piece, Kishore creates a chilling, historically-grounded portrait of colonial ambition dressed in diplomatic language." }
+    ],
+    crew: [
+      { role: "Director", name: "Rishab Shetty" },
+      { role: "Screenplay", name: "Rishab Shetty, Chandrashekar Valiyamane" },
+      { role: "Cinematography", name: "Bhuvan Gowda" },
+      { role: "Original Score", name: "B. Ajaneesh Loknath" },
+      { role: "Production Design", name: "Shivakumar Gowda" },
+      { role: "Costumes", name: "Praveen Shetty" }
+    ],
+    awards: ["National Film Award - Best Kannada Film", "Filmfare South - Best Film", "Star Screen Award - Best Historical Film"],
+    price: { standard: 180, premium: 310, recliner: 490 }
+  },
+
+  // COMING SOON
+  {
+    id: 7,
+    title: "Neon Samurai",
+    status: "soon",
+    genre: ["Action", "Cyberpunk"],
+    language: "Japanese, English",
+    duration: "TBC",
+    rating: "Expected",
+    certification: "TBC",
+    releaseDate: "June 6, 2026",
+    director: "Makoto Shinkai",
+    producers: ["Genki Kawamura"],
+    studio: "CoMix Wave Films",
+    poster: "https://images.unsplash.com/photo-1524749292158-7540c2494485?w=400&q=80",
+    backdrop: "https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?w=1600&q=80",
+    synopsis: "In a hyper-connected Neo-Tokyo of 2140, a disgraced warrior navigates a city run by artificial gods. Shinkai's first live-action hybrid feature blends gorgeous animation with breath-taking action.",
+    story: "",
+    cast: [],
+    crew: [],
+    awards: [],
+    price: { standard: 220, premium: 380, recliner: 600 }
+  },
+  {
+    id: 8,
+    title: "Empire of Dust",
+    status: "soon",
+    genre: ["Western", "Action"],
+    language: "English",
+    duration: "TBC",
+    rating: "Expected",
+    certification: "TBC",
+    releaseDate: "July 4, 2026",
+    director: "Quentin Tarantino",
+    producers: ["Shannon McIntosh"],
+    studio: "The Weinstein Company",
+    poster: "https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=400&q=80",
+    backdrop: "https://images.unsplash.com/photo-1504701954957-2010ec3bcec1?w=1600&q=80",
+    synopsis: "An audacious revisionist western about two outlaws, a corrupt railroad baron, and the town that stood in their way. Tarantino's most ambitious film in a decade.",
+    story: "",
+    cast: [],
+    crew: [],
+    awards: [],
+    price: { standard: 250, premium: 400, recliner: 650 }
+  }
+];
+
+const cinemas = [
+  { name: "PVR INOX - Forum Mall", location: "Koramangala" },
+  { name: "Cinepolis - Orion Mall", location: "Rajajinagar" },
+  { name: "PVR - Phoenix Marketcity", location: "Whitefield" },
+  { name: "Urvashi Theatre", location: "Lalbagh Road" },
+  { name: "IMAX - Innovative Film City", location: "Bidadi" }
+];
+
+const showTimes = ["10:00 AM", "1:15 PM", "4:30 PM", "7:45 PM", "11:00 PM"];

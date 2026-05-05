@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MARCO- Book Movie Tickets</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">MARCO</a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Now Showing</a></li>
+      <li><a href="#coming-soon">Coming Soon</a></li>
+      <li><a href="#offers">Offers</a></li>
+    </ul>
+    <div class="nav-right">
+      <input type="text" class="search-box" placeholder="Search movies, cinemas..." />
+      <button class="btn-sign">Sign In</button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg" style="background-image:url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=1600&q=80')"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="hero-tag">Featured This Week</span>
+    <h1 class="hero-title">The Last Horizon</h1>
+    <p class="hero-sub">An epic space odyssey beyond the edges of imagination. Winner of 4 Academy Awards.</p>
+    <div class="hero-meta">
+      <span class="badge">2h 34m</span>
+      <span class="badge">Sci-Fi / Drama</span>
+      <span class="badge rating">9.1 / 10</span>
+    </div>
+    <div class="hero-cta">
+      <a href="movie.html?id=1" class="btn-primary">View Details</a>
+      <a href="booking.html?id=1" class="btn-outline">Book Now</a>
+    </div>
+  </div>
+</section>
+
+<!-- NOW SHOWING -->
+<section class="section" id="now-showing">
+  <div class="container">
+    <div class="section-header">
+      <h2>Now Showing</h2>
+      <p>Catch the latest releases at cinemas near you</p>
+    </div>
+    <div class="movie-grid" id="movieGrid"></div>
+  </div>
+</section>
+
+<!-- COMING SOON -->
+<section class="section dark-section" id="coming-soon">
+  <div class="container">
+    <div class="section-header">
+      <h2>Coming Soon</h2>
+      <p>Mark your calendars for these upcoming releases</p>
+    </div>
+    <div class="upcoming-grid" id="upcomingGrid"></div>
+  </div>
+</section>
+
+<!-- OFFERS -->
+<section class="section" id="offers">
+  <div class="container">
+    <div class="section-header">
+      <h2>Exclusive Offers</h2>
+    </div>
+    <div class="offers-grid">
+      <div class="offer-card">
+        <div class="offer-icon">%</div>
+        <h3>First Booking</h3>
+        <p>Get 30% off on your first booking with code <strong>KIRAN30</strong></p>
+      </div>
+      <div class="offer-card">
+        <div class="offer-icon">2</div>
+        <h3>Buy 2 Get 1</h3>
+        <p>Book 2 tickets and get 1 free every Tuesday and Wednesday</p>
+      </div>
+      <div class="offer-card">
+        <div class="offer-icon">P</div>
+        <h3>Premium Pass</h3>
+        <p>Unlimited movies for Rs. 499/month with our Premium Pass</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="logo">CINE<span>KIRAN</span></a>
+      <p>Your ultimate destination for movie ticket bookings. Experience cinema like never before.</p>
+    </div>
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+      </ul>
+    </div>
+    <div class="footer-links">
+      <h4>Support</h4>
+      <ul>
+        <li><a href="#">Help Center</a></li>
+        <li><a href="#">Cancellation Policy</a></li>
+        <li><a href="#">Feedback</a></li>
+        <li><a href="#">Careers</a></li>
+      </ul>
+    </div>
+    <div class="footer-contact">
+      <h4>Contact Us</h4>
+      <p>support@cinekiran.in</p>
+      <p>+91 98765 43210</p>
+      <p>Mon - Sat: 9AM - 9PM IST</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 CineKiran. All rights reserved. Designed and developed by <strong>Kiran</strong>.</p>
+  </div>
+</footer>
+
+<script src="movies.js"></script>
+<script src="app.js"></script>
+<script>
+  renderMovieGrid('movieGrid', movies.filter(m => m.status === 'now'));
+  renderUpcomingGrid('upcomingGrid', movies.filter(m => m.status === 'soon'));
+</script>
+</body>
+</html>

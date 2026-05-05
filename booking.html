@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Book Tickets - CineKiran</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">CINE<span>KIRAN</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Now Showing</a></li>
+      <li><a href="index.html#coming-soon">Coming Soon</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="btn-sign">Sign In</button>
+    </div>
+  </div>
+</nav>
+
+<!-- BOOKING STEPS -->
+<div class="booking-steps-bar">
+  <div class="container">
+    <div class="steps">
+      <div class="step active" id="step1">
+        <span class="step-num">1</span>
+        <span class="step-label">Select Show</span>
+      </div>
+      <div class="step-divider"></div>
+      <div class="step" id="step2">
+        <span class="step-num">2</span>
+        <span class="step-label">Choose Seats</span>
+      </div>
+      <div class="step-divider"></div>
+      <div class="step" id="step3">
+        <span class="step-num">3</span>
+        <span class="step-label">Payment</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="booking-wrapper">
+  <div class="container">
+    <div class="booking-layout">
+
+      <!-- LEFT: SELECTION PANEL -->
+      <div class="booking-main">
+
+        <!-- STEP 1: DATE & SHOW -->
+        <div class="booking-panel" id="panelShow">
+          <h2 class="panel-title">Select Date and Show</h2>
+
+          <div class="date-strip" id="dateStrip"></div>
+
+          <div class="cinema-list" id="cinemaList"></div>
+        </div>
+
+        <!-- STEP 2: SEAT MAP (hidden initially) -->
+        <div class="booking-panel hidden" id="panelSeats">
+          <h2 class="panel-title">Choose Your Seats</h2>
+          <div class="screen-label">
+            <div class="screen-arc"></div>
+            <span>SCREEN</span>
+          </div>
+          <div class="seat-legend">
+            <span class="legend-item"><span class="seat-swatch available"></span> Available</span>
+            <span class="legend-item"><span class="seat-swatch selected"></span> Selected</span>
+            <span class="legend-item"><span class="seat-swatch occupied"></span> Occupied</span>
+            <span class="legend-item"><span class="seat-swatch premium"></span> Premium</span>
+          </div>
+          <div class="seat-map" id="seatMap"></div>
+          <button class="btn-primary btn-full" id="btnProceedPayment" disabled>Proceed to Payment</button>
+        </div>
+
+      </div>
+
+      <!-- RIGHT: SUMMARY CARD -->
+      <aside class="booking-summary" id="bookingSummary">
+        <div class="summary-card">
+          <div class="summary-poster" id="summaryPoster"></div>
+          <div class="summary-info">
+            <h3 id="summaryTitle">Loading...</h3>
+            <p id="summaryMeta" class="summary-meta"></p>
+            <div class="summary-divider"></div>
+            <div class="summary-row" id="summaryShow" style="display:none">
+              <span>Show</span><span id="summaryShowVal"></span>
+            </div>
+            <div class="summary-row" id="summarySeatsRow" style="display:none">
+              <span>Seats</span><span id="summarySeatsVal"></span>
+            </div>
+            <div class="summary-row" id="summaryAmtRow" style="display:none">
+              <span>Total</span><span id="summaryAmtVal" class="highlight-price"></span>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="logo">CINE<span>KIRAN</span></a>
+      <p>Your ultimate destination for movie ticket bookings.</p>
+    </div>
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+      </ul>
+    </div>
+    <div class="footer-links">
+      <h4>Support</h4>
+      <ul>
+        <li><a href="#">Help Center</a></li>
+        <li><a href="#">Cancellation Policy</a></li>
+      </ul>
+    </div>
+    <div class="footer-contact">
+      <h4>Contact Us</h4>
+      <p>support@cinekiran.in</p>
+      <p>+91 98765 43210</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 CineKiran. All rights reserved. Designed and developed by <strong>Kiran</strong>.</p>
+  </div>
+</footer>
+
+<script src="movies.js"></script>
+<script src="booking.js"></script>
+</body>
+</html>

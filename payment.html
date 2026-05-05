@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Secure Payment - CineKiran</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">CINE<span>KIRAN</span></a>
+    <div class="nav-right">
+      <span class="secure-badge">Secure Checkout</span>
+    </div>
+  </div>
+</nav>
+
+<div class="booking-steps-bar">
+  <div class="container">
+    <div class="steps">
+      <div class="step done" id="step1">
+        <span class="step-num">&#10003;</span>
+        <span class="step-label">Select Show</span>
+      </div>
+      <div class="step-divider done-line"></div>
+      <div class="step done" id="step2">
+        <span class="step-num">&#10003;</span>
+        <span class="step-label">Choose Seats</span>
+      </div>
+      <div class="step-divider done-line"></div>
+      <div class="step active" id="step3">
+        <span class="step-num">3</span>
+        <span class="step-label">Payment</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="payment-wrapper">
+  <div class="container">
+    <div class="payment-layout">
+
+      <!-- LEFT: PAYMENT FORM -->
+      <div class="payment-main">
+        <h2 class="panel-title">Complete Your Payment</h2>
+
+        <!-- PAYMENT METHOD TABS -->
+        <div class="pay-tabs">
+          <button class="pay-tab active" data-tab="card">Credit / Debit Card</button>
+          <button class="pay-tab" data-tab="upi">UPI</button>
+          <button class="pay-tab" data-tab="netbank">Net Banking</button>
+          <button class="pay-tab" data-tab="wallet">Wallets</button>
+        </div>
+
+        <!-- CARD -->
+        <div class="pay-panel active" id="tab-card">
+          <div class="card-visual" id="cardVisual">
+            <div class="card-chip"></div>
+            <div class="card-number-display" id="cardNumDisplay">**** **** **** ****</div>
+            <div class="card-bottom">
+              <div>
+                <div class="card-label">Card Holder</div>
+                <div class="card-val" id="cardHolderDisplay">YOUR NAME</div>
+              </div>
+              <div>
+                <div class="card-label">Expires</div>
+                <div class="card-val" id="cardExpDisplay">MM/YY</div>
+              </div>
+              <div class="card-brand" id="cardBrand">VISA</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Card Number</label>
+            <input type="text" id="cardNum" maxlength="19" placeholder="1234 5678 9012 3456" class="form-input"/>
+          </div>
+          <div class="form-group">
+            <label>Cardholder Name</label>
+            <input type="text" id="cardHolder" placeholder="Name as on card" class="form-input"/>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Expiry Date</label>
+              <input type="text" id="cardExp" maxlength="5" placeholder="MM/YY" class="form-input"/>
+            </div>
+            <div class="form-group">
+              <label>CVV</label>
+              <input type="password" id="cardCvv" maxlength="3" placeholder="***" class="form-input"/>
+            </div>
+          </div>
+          <div class="form-check">
+            <input type="checkbox" id="saveCard"/>
+            <label for="saveCard">Save card for future bookings</label>
+          </div>
+        </div>
+
+        <!-- UPI -->
+        <div class="pay-panel" id="tab-upi">
+          <div class="upi-options">
+            <div class="upi-app active-upi" data-app="gpay">Google Pay</div>
+            <div class="upi-app" data-app="phonepe">PhonePe</div>
+            <div class="upi-app" data-app="paytm">Paytm</div>
+            <div class="upi-app" data-app="bhim">BHIM</div>
+          </div>
+          <div class="form-group" style="margin-top:24px">
+            <label>Or enter UPI ID</label>
+            <input type="text" placeholder="yourname@upi" class="form-input"/>
+          </div>
+          <p class="upi-note">You will receive a payment request on your UPI app</p>
+        </div>
+
+        <!-- NET BANKING -->
+        <div class="pay-panel" id="tab-netbank">
+          <div class="bank-grid">
+            <label class="bank-option"><input type="radio" name="bank" value="sbi"/> SBI</label>
+            <label class="bank-option"><input type="radio" name="bank" value="hdfc"/> HDFC</label>
+            <label class="bank-option"><input type="radio" name="bank" value="icici"/> ICICI</label>
+            <label class="bank-option"><input type="radio" name="bank" value="axis"/> Axis</label>
+            <label class="bank-option"><input type="radio" name="bank" value="kotak"/> Kotak</label>
+            <label class="bank-option"><input type="radio" name="bank" value="yes"/> Yes Bank</label>
+            <label class="bank-option"><input type="radio" name="bank" value="pnb"/> PNB</label>
+            <label class="bank-option"><input type="radio" name="bank" value="bob"/> Bank of Baroda</label>
+          </div>
+          <p class="upi-note">You will be redirected to your bank's secure portal</p>
+        </div>
+
+        <!-- WALLETS -->
+        <div class="pay-panel" id="tab-wallet">
+          <div class="wallet-grid">
+            <div class="wallet-option active-wallet" data-w="paytm">Paytm Wallet</div>
+            <div class="wallet-option" data-w="amazon">Amazon Pay</div>
+            <div class="wallet-option" data-w="freecharge">Freecharge</div>
+            <div class="wallet-option" data-w="mobikwik">Mobikwik</div>
+          </div>
+          <p class="upi-note" id="walletBalance">Balance: Rs. 1,250.00 available</p>
+        </div>
+
+        <!-- COUPON -->
+        <div class="coupon-section">
+          <label>Have a coupon code?</label>
+          <div class="coupon-row">
+            <input type="text" id="couponInput" placeholder="Enter coupon code" class="form-input"/>
+            <button class="btn-coupon" id="btnApplyCoupon">Apply</button>
+          </div>
+          <p class="coupon-msg" id="couponMsg"></p>
+        </div>
+
+        <!-- PAY BUTTON -->
+        <button class="btn-pay" id="btnPay">
+          <span id="btnPayLabel">Pay Securely</span>
+        </button>
+
+        <div class="pay-secure-info">
+          <span>256-bit SSL Encrypted</span>
+          <span>PCI DSS Compliant</span>
+          <span>Razorpay Secured</span>
+        </div>
+      </div>
+
+      <!-- RIGHT: ORDER SUMMARY -->
+      <aside class="payment-summary">
+        <div class="summary-card">
+          <h3 class="summary-heading">Order Summary</h3>
+          <div class="summary-poster" id="payPoster"></div>
+          <div class="summary-info">
+            <h3 id="payTitle"></h3>
+            <p class="summary-meta" id="payMeta"></p>
+            <div class="summary-divider"></div>
+            <div class="summary-row"><span>Show</span><span id="payShow"></span></div>
+            <div class="summary-row"><span>Seats</span><span id="paySeats"></span></div>
+            <div class="summary-row"><span>Cinema</span><span id="payCinema"></span></div>
+            <div class="summary-divider"></div>
+            <div class="summary-row"><span>Ticket Price</span><span id="payBase"></span></div>
+            <div class="summary-row"><span>Convenience Fee</span><span id="payFee"></span></div>
+            <div class="summary-row" id="discountRow" style="display:none"><span>Discount</span><span id="payDiscount" style="color:#4ade80"></span></div>
+            <div class="summary-divider"></div>
+            <div class="summary-row total-row"><span>Total Payable</span><span id="payTotal" class="highlight-price"></span></div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</div>
+
+<!-- SUCCESS MODAL -->
+<div class="modal-overlay hidden" id="successModal">
+  <div class="modal-box">
+    <div class="modal-checkmark">
+      <svg viewBox="0 0 52 52"><circle class="checkmark-circle" cx="26" cy="26" r="25" fill="none"/><path class="checkmark-check" fill="none" d="M14 27l7 7 17-18"/></svg>
+    </div>
+    <h2>Booking Confirmed!</h2>
+    <p id="modalMsg"></p>
+    <div class="booking-id-box">
+      <span>Booking ID</span>
+      <strong id="bookingId"></strong>
+    </div>
+    <p class="modal-note">Your e-tickets have been sent to your registered email address</p>
+    <div class="modal-actions">
+      <a href="index.html" class="btn-primary">Back to Home</a>
+      <button class="btn-outline" onclick="window.print()">Download Tickets</button>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="logo">CINE<span>KIRAN</span></a>
+      <p>Your ultimate destination for movie ticket bookings.</p>
+    </div>
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+      </ul>
+    </div>
+    <div class="footer-links">
+      <h4>Support</h4>
+      <ul>
+        <li><a href="#">Help Center</a></li>
+        <li><a href="#">Cancellation Policy</a></li>
+      </ul>
+    </div>
+    <div class="footer-contact">
+      <h4>Contact Us</h4>
+      <p>support@cinekiran.in</p>
+      <p>+91 98765 43210</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 CineKiran. All rights reserved. Designed and developed by <strong>Kiran</strong>.</p>
+  </div>
+</footer>
+
+<script src="movies.js"></script>
+<script src="payment.js"></script>
+</body>
+</html>
